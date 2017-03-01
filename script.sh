@@ -5,7 +5,7 @@ dir_old="/opt/deployment/old"
 dir_cur="/opt/deployment/curr"
 dir_dist="/opt/deployment/dist"
 
-curl -u admin:admin123 -O http://nexus/repository/deplyment-jboss/$VER_ART-index.tar.gz
+curl -u admin:admin123 -o http://nexus/repository/deplyment-jboss/$VER_ART-index.tar.gz /opt/
 
 if [[ ! -e $dir ]]; then
     mkdir $dir
