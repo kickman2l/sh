@@ -5,6 +5,10 @@ dir_old="/opt/deployment/old"
 dir_cur="/opt/deployment/curr"
 dir_dist="/opt/deployment/dist"
 
+echo $VER_ART
+echo ${VER_ART}
+
+
 curl -u admin:admin123 -o /opt/${VER_ART}-index.tar.gz http://nexus/repository/deplyment-jboss/$VER_ART-index.tar.gz 
 
 if [[ ! -e $dir ]]; then
