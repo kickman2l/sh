@@ -45,3 +45,14 @@ fi
 tar xzvf $dir_dist/$VER_ART-index.tar.gz -C /opt/jboss-as-7.1.1.Final/welcome-content/
 
 rm -f /opt/$VER_ART-index.tar.gz
+
+code=`curl -s -I http://jboss | grep HTTP/1.1 | awk {'print $2'}`
+if [[ "$code" != "200" ]]; then
+    echo "not super code"
+    rm -f $dir_cur/*
+    rm -f $dir_dist/*
+    cp $dir_old/$(($VER_ART-1))-index.tar.gz $dir_cur/
+    cp $dir_old/$(($VER_ART-1))-index.tar.gz $dir_dist/
+    rm -f $dir_old/*
+    curl -u admin:admin123 -o $dir_old/$(($VER_ART-2))-index.tar.gz http://nexus/repository/deplyment-jboss/$(($VER_ART-2))-index.tar.gz
+fi
