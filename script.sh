@@ -38,3 +38,5 @@ else
     rm -f $dir_dist/*
     cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
 fi
+
+tar xzvf $dir_dist/$VER_ART-index.tar.gz /opt/jboss-as-7.1.1.Final/welcome-content/
