@@ -1,5 +1,4 @@
 #!/bin/bash
-
 dir="/opt/deployment"
 dir_old="/opt/deployment/old"
 dir_cur="/opt/deployment/curr"
