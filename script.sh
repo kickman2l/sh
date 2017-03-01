@@ -19,11 +19,19 @@ fi
 
 if [[ ! -e $dir_cur ]]; then
     mkdir $dir_cur
+else
+    if [[ -e $dir_cur/$(($VER_ART-1))-index.tar.gz ]]; then
+        cp $dir_cur/$(($VER_ART-1))-index.tar.gz $dir_old/
+        rm -f $dir_cur/*
+        cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
+    else
+        cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
+    fi
 fi
 
 if [[ ! -e $dir_dist ]]; then
     mkdir $dir_dist
 else
     rm -f $dir_dist/*
-    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
+    cp $WORKSPACE/$VER_ART-index.tar.gz
 fi
