@@ -23,25 +23,25 @@ fi
 
 if [[ ! -e $dir_cur ]]; then
     mkdir $dir_cur
-    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
+    cp $VER_ART-index.tar.gz $dir_cur/
 else
     if [[ -e $dir_cur/$(($VER_ART-1))-index.tar.gz ]]; then
         cp $dir_cur/$(($VER_ART-1))-index.tar.gz $dir_old/
         rm -f $dir_cur/*
-        cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
+        cp $VER_ART-index.tar.gz $dir_cur/
     else
-        cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
+        cp $VER_ART-index.tar.gz $dir_cur/
     fi
 fi
 
 if [[ ! -e $dir_dist ]]; then
     mkdir $dir_dist
-    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
+    cp $VER_ART-index.tar.gz $dir_dist/
 else
     rm -f $dir_dist/*
-    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
+    cp $VER_ART-index.tar.gz $dir_dist/
 fi
 
 tar xzvf $dir_dist/$VER_ART-index.tar.gz -C /opt/jboss-as-7.1.1.Final/welcome-content/
 
-rm -f $WORKSPACE/$VER_ART-index.tar.gz
+rm -f $VER_ART-index.tar.gz
