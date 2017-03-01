@@ -15,10 +15,12 @@ if [[ ! -e $dir_old ]]; then
     mkdir $dir_old
 else
     rm -f $dir_old/*
+    cp $dir_cur/$(($VER_ART-1))-index.tar.gz $dir_old/
 fi
 
 if [[ ! -e $dir_cur ]]; then
     mkdir $dir_cur
+    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_cur/
 else
     if [[ -e $dir_cur/$(($VER_ART-1))-index.tar.gz ]]; then
         cp $dir_cur/$(($VER_ART-1))-index.tar.gz $dir_old/
@@ -31,6 +33,7 @@ fi
 
 if [[ ! -e $dir_dist ]]; then
     mkdir $dir_dist
+    cp $WORKSPACE/$VER_ART-index.tar.gz
 else
     rm -f $dir_dist/*
     cp $WORKSPACE/$VER_ART-index.tar.gz
