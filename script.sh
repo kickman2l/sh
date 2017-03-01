@@ -40,3 +40,5 @@ else
 fi
 
 tar xzvf $dir_dist/$VER_ART-index.tar.gz -C /opt/jboss-as-7.1.1.Final/welcome-content/
+
+rm -f $WORKSPACE/$VER_ART-index.tar.gz
