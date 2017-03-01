@@ -33,8 +33,8 @@ fi
 
 if [[ ! -e $dir_dist ]]; then
     mkdir $dir_dist
-    cp $WORKSPACE/$VER_ART-index.tar.gz
+    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
 else
     rm -f $dir_dist/*
-    cp $WORKSPACE/$VER_ART-index.tar.gz
+    cp $WORKSPACE/$VER_ART-index.tar.gz $dir_dist/
 fi
